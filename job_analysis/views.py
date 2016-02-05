@@ -52,7 +52,6 @@ def do_job_analysis(request):
             'useragent': "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2)"
         }
         r = requests.get('http://api.indeed.com/ads/apisearch', params=params)
-        print r.text
         page_of_jobs_dict = json.loads(r.text)
         for job in page_of_jobs_dict['results']:
             urls.append(job['url'])
