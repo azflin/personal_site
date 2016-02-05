@@ -139,7 +139,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': 'mysite.log',
+            'filename': '/home/acerag/code/personal_site/personal_site/mysite.log',
             'formatter': 'verbose'
         },
     },
