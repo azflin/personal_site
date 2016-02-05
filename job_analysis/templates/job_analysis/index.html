@@ -1,17 +1,23 @@
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-    {% endfor %}
-</ul>
-{% endif %}
-<form action="/job_analysis/" method="post">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Job Search Keyword Analyzer</h1>
+<form method="post" id="post-form">
     {% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit">
 </form>
-{% if results %}
-    {{ results.0 | slice:"25"}}
-    </br>
-    {{ results.1 | slice:"25"}}
-{% endif %}
+<div id="results">
+    <div id="urls"></div>
+    <div id="progress"></div>
+    <ul id="word_frequency"></ul>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>
+<script src="/static/job_analysis/job_analysis.js"></script>
+</body>
+</html>
