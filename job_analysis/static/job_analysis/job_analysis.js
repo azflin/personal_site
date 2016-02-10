@@ -8,10 +8,6 @@ function do_job_analysis(analysis_id){
         + "<div style='display:inline-block;'><div id='bigram_frequency'>"
         + "</div></div>"
     );
-    //$('#results').append("<div id='urls'></div>");
-    //$('#results').append("<div id='progress'></div>");
-    //$('#results').append("<div id='word_frequency'></div>");
-    //$('#results').append("<div id='bigram_frequency'></div>");
     $.ajax({
         url : "/job_analysis/do_job_analysis/",
         type: "POST",
